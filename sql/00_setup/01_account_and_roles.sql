@@ -32,6 +32,10 @@ GRANT CREATE DATABASE ON ACCOUNT TO ROLE URBANASSIST_ENGINEER;
 -- Allow the role to create the X-Small project warehouse.
 GRANT CREATE WAREHOUSE ON ACCOUNT TO ROLE URBANASSIST_ENGINEER;
 
+
+-- Allow the role to create table in bronze schema
+GRANT CREATE TABLE ON SCHEMA BRONZE TO ROLE URBANASSIST_ENGINEER;
+
 -- Allow the role to create the S3 storage integration used by the stage.
 GRANT CREATE INTEGRATION ON ACCOUNT TO ROLE URBANASSIST_ENGINEER;
 
@@ -92,6 +96,7 @@ USE DATABASE URBANASSIST_DB;
 
 -- Use OPS as the default schema for ingestion and orchestration objects.
 USE SCHEMA OPS;
+
 
 -- Confirm that the session is using the intended role, warehouse, and database
 -- before continuing to integrations or data objects.
